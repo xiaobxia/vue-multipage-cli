@@ -7,10 +7,11 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+//添加入口js
+var entries = utils.getEntry(['./src/module/*.js', './src/module/**/*.js']);
+
 module.exports = {
-  entry: {
-    app: './src/main.js'
-  },
+  entry: entries,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -22,7 +23,11 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      //添加alias
+      'src': path.resolve(__dirname, '../src'),
+      'common': path.resolve(__dirname, '../src/common'),
+      'components': path.resolve(__dirname, '../src/components')
     }
   },
   module: {
