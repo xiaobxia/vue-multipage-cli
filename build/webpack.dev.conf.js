@@ -39,6 +39,7 @@ var webpackConfig = merge(baseWebpackConfig, {
 
 //添加html入口文件
 var pages = utils.getEntry(['./src/module/*.html','./src/module/**/*.html']);
+console.log(pages)
 //配置HtmlWebpackPlugin
 for (var pathname in pages) {
   // 配置生成的html文件，定义路径等

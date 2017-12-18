@@ -66,6 +66,7 @@ exports.styleLoaders = function (options) {
       test: new RegExp('\\.' + extension + '$'),
       use: loader
     })
+    console.log(loader)
   }
   return output
 }

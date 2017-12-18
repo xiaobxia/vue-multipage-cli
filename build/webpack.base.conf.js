@@ -9,7 +9,7 @@ function resolve (dir) {
 
 //添加入口js
 var entries = utils.getEntry(['./src/module/*.js', './src/module/**/*.js']);
-
+console.log(entries)
 module.exports = {
   entry: entries,
   output: {
