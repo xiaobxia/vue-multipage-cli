@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <img src="./images/logo.png">
+    <img src="../../assets/logo.png">
+    <div>用户详情</div>
     <hello></hello>
   </div>
 </template>
 
 <script>
-  import 'common/css/reset.css';
-  import Hello from 'components/Hello/Hello'
+  import Hello from '@/components/Hello/Hello'
 
   export default {
-    name: 'app',
+    name: 'detail',
     components: {
       Hello
     }

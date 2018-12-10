@@ -66,7 +66,6 @@ exports.styleLoaders = function (options) {
       test: new RegExp('\\.' + extension + '$'),
       use: loader
     })
-    console.log(loader)
   }
   return output
 }
@@ -82,8 +81,8 @@ exports.getEntry = function (globPath) {
     glob.sync(itemPath).forEach(function (entry) {
       basename = path.basename(entry, path.extname(entry));
       if (entry.split('/').length > 4) {
-        tmp = entry.split('/').splice(-3);
-        pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
+        tmp = entry.split('/').splice(3, entry.split('/').length -4);
+        pathname = tmp.join('/') + '/' + basename; // 正确输出js和html的路径
         entries[pathname] = entry;
       } else {
         entries[basename] = entry;
